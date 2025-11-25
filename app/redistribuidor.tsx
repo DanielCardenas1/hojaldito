@@ -179,7 +179,7 @@ export default function LandingSocioGanador() {
                 ✓
               </span>
               <p className="text-lg text-gray-800">
-                <strong className="text-green-600">Cada semana que ese negocio compra y vende, tú recibes dinero.</strong>
+                <strong className="text-green-600">Cada semana que ese negocio compra y vende, tú recibes dinero. También ganas si hacemos eventos (Día Pastelero™) en ese local.</strong>
               </p>
             </div>
           </div>
@@ -240,7 +240,7 @@ export default function LandingSocioGanador() {
                 Ganas cada semana
               </h3>
               <p className="text-gray-700">
-                Cada vez que el negocio que referiste compra y vende pasteles, recibes tu bonificación semanal <strong className="text-green-600">directo en tu Nequi, Daviplata o donde lo desees</strong>. Ingreso constante sin volver a hacer nada con ese negocio.
+                Cada vez que el negocio que referiste compra y vende pasteles, recibes tu bonificación semanal. <strong className="text-amber-600">También ganas si organizamos un Día Pastelero™ o eventos en ese local</strong>. Pago <strong className="text-green-600">directo en tu Nequi, Daviplata o donde lo desees</strong>. Ingreso constante sin volver a hacer nada con ese negocio.
               </p>
             </div>
           </div>
@@ -286,7 +286,7 @@ export default function LandingSocioGanador() {
               <span className="text-3xl">💰</span>
               <div>
                 <p className="font-bold text-gray-900">Bonificación por venta</p>
-                <p className="text-sm text-gray-600">Por cada pastel vendido</p>
+                <p className="text-sm text-gray-600">Por cada pastel + eventos</p>
               </div>
             </div>
 
@@ -336,7 +336,7 @@ export default function LandingSocioGanador() {
             <p className="mb-6 text-xl leading-relaxed">
               Hojaldito está en <strong>fase de expansión</strong>. Por eso, durante los primeros meses 
               ofrecemos una <strong className="text-amber-100">bonificación más alta</strong> por los 
-              pasteles vendidos en los negocios que tú consigas.
+              pasteles vendidos y eventos realizados en los negocios que tú consigas.
             </p>
             <p className="text-lg text-amber-100">
               Después, la bonificación se estabiliza, y se mantiene para los redistribuidores que 
@@ -503,7 +503,22 @@ export default function LandingSocioGanador() {
               </summary>
               <p className="mt-4 text-gray-700">
                 Depende de cuántos negocios consigas y cuánto vendan. Un solo negocio puede darte 
-                un ingreso extra semanal. Con varios negocios activos el ingreso se vuelve muy interesante.
+                un ingreso extra semanal. Con varios negocios activos el ingreso se vuelve muy interesante. 
+                <strong className="text-amber-600"> Además, si organizamos eventos (Día Pastelero™) en los negocios que trajiste, también ganas por eso.</strong>
+              </p>
+            </details>
+
+            <details className="group rounded-2xl border-2 border-gray-200 bg-white p-6 shadow-md">
+              <summary className="cursor-pointer list-none font-bold text-gray-900">
+                <div className="flex items-center justify-between">
+                  <span className="text-lg">¿También gano con los eventos?</span>
+                  <span className="text-2xl transition-transform group-open:rotate-45">+</span>
+                </div>
+              </summary>
+              <p className="mt-4 text-gray-700">
+                <strong className="text-green-600">¡Sí!</strong> Además de ganar cada semana por los pasteles que vendan los negocios que refieras, 
+                <strong> también recibes bonificación cuando hacemos un Día Pastelero™ o cualquier evento especial en esos locales.</strong> 
+                Es una ganancia adicional que no esperabas.
               </p>
             </details>
 
