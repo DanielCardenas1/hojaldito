@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export default function LandingDistribuidor() {
+export default function LandingSocioGanador() {
   const [formData, setFormData] = useState({
     nombre: "",
     ciudad: "",
@@ -56,7 +56,7 @@ export default function LandingDistribuidor() {
             <div className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 bg-white/10 px-6 py-3 backdrop-blur-sm">
               <span className="text-2xl">💼</span>
               <span className="text-sm font-bold uppercase tracking-wider text-white">
-                Programa Redistribuidor
+                Programa Socio Ganador
               </span>
             </div>
           </div>
@@ -70,7 +70,7 @@ export default function LandingDistribuidor() {
 
           {/* Subtítulo */}
           <p className="mx-auto mb-10 max-w-3xl text-center text-xl text-amber-50 md:text-2xl">
-            Conviértete en <strong className="text-white">Redistribuidor Oficial Hojaldito®</strong>: 
+            Conviértete en <strong className="text-white">Socio Ganador Hojaldito®</strong>: 
             recomiendas negocios y recibes una bonificación por cada pastel que vendan. 
             <span className="block mt-2">Nosotros hacemos todo lo demás.</span>
           </p>
@@ -81,7 +81,7 @@ export default function LandingDistribuidor() {
               onClick={scrollToForm}
               className="group relative overflow-hidden rounded-full bg-white px-10 py-6 text-xl font-black text-amber-600 shadow-2xl transition-all hover:scale-105 hover:shadow-amber-900/50 md:px-12 md:text-2xl"
             >
-              <span className="relative z-10">💰 Quiero ser redistribuidor</span>
+              <span className="relative z-10">💰 Quiero ser Socio Ganador</span>
               <div className="absolute inset-0 -z-0 bg-gradient-to-r from-amber-100 to-yellow-100 opacity-0 transition-opacity group-hover:opacity-100" />
             </button>
           </div>
@@ -103,7 +103,7 @@ export default function LandingDistribuidor() {
             <span className="block text-amber-600">Es un ingreso extra por conectar negocios.</span>
           </h2>
           <p className="text-xl leading-relaxed text-gray-700 md:text-2xl">
-            Como redistribuidor <strong>no manejas producto, no haces domicilios, no cobras</strong>. 
+            Como Socio Ganador <strong>no manejas producto, no haces domicilios, no cobras</strong>. 
             Solo conectas cafeterías, tiendas o restaurantes con Hojaldito®. 
             <span className="mt-2 block text-amber-700">
               Si el negocio compra y vende pasteles, <strong>tú ganas comisión</strong>.
@@ -225,7 +225,7 @@ export default function LandingDistribuidor() {
                 Ganas cada semana
               </h3>
               <p className="text-gray-700">
-                Cada vez que el negocio que referiste compra y vende pasteles, recibes tu bonificación semanal. Ingreso constante sin volver a hacer nada con ese negocio.
+                Cada vez que el negocio que referiste compra y vende pasteles, recibes tu bonificación semanal <strong className="text-green-600">directo en tu Nequi, Daviplata o donde lo desees</strong>. Ingreso constante sin volver a hacer nada con ese negocio.
               </p>
             </div>
           </div>
@@ -239,7 +239,7 @@ export default function LandingDistribuidor() {
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-black text-gray-900 md:text-5xl">
             Beneficios de ser
-            <span className="block text-green-600">Redistribuidor Oficial Hojaldito®</span>
+            <span className="block text-green-600">Socio Ganador Hojaldito®</span>
           </h2>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -401,7 +401,7 @@ export default function LandingDistribuidor() {
       <section className="border-y-4 border-blue-300 bg-gradient-to-br from-blue-50 to-indigo-50 py-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-black text-gray-900 md:text-5xl">
-            Redistribuidores que ya están ganando
+            Socios Ganadores que ya están ganando
           </h2>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -411,7 +411,7 @@ export default function LandingDistribuidor() {
                 <div className="h-14 w-14 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500"></div>
                 <div>
                   <p className="font-bold text-gray-900">Carlos</p>
-                  <p className="text-sm text-gray-600">Redistribuidor en Tunja</p>
+                  <p className="text-sm text-gray-600">Socio Ganador en Tunja</p>
                 </div>
               </div>
               <p className="mb-4 text-gray-700">
@@ -431,7 +431,7 @@ export default function LandingDistribuidor() {
                 </div>
               </div>
               <p className="mb-4 text-gray-700">
-                &ldquo;Trabajo tiempo completo, pero como redistribuidora traje 3 negocios y ahora tengo un 
+                &ldquo;Trabajo tiempo completo, pero como Socia Ganadora traje 3 negocios y ahora tengo un 
                 ingreso extra mensual sin cambiar mi rutina.&rdquo;
               </p>
               <div className="text-amber-500">⭐⭐⭐⭐⭐</div>
@@ -500,7 +500,7 @@ export default function LandingDistribuidor() {
                 </div>
               </summary>
               <p className="mt-4 text-gray-700">
-                No es un empleo. Es una forma de generar <strong>ingresos extra por referir negocios</strong> a Hojaldito®.
+                No es un empleo. Es una forma de generar <strong>ingresos extra por referir negocios</strong> a Hojaldito®. <span className="text-green-600 font-semibold">Recibes tu dinero directo en Nequi, Daviplata o donde prefieras.</span>
               </p>
             </details>
 
@@ -552,7 +552,7 @@ export default function LandingDistribuidor() {
         <div className="mx-auto max-w-3xl px-6">
           <div className="mb-12 text-center text-white">
             <h2 className="mb-4 text-3xl font-black md:text-5xl">
-              ¿Quieres empezar a ganar como redistribuidor sin invertir?
+              ¿Quieres empezar a ganar como Socio Ganador sin invertir?
             </h2>
             <p className="text-xl text-amber-100 md:text-2xl">
               Déjanos tus datos y te explicamos paso a paso cómo funciona el programa en tu zona.
@@ -649,7 +649,7 @@ export default function LandingDistribuidor() {
               type="submit"
               className="w-full rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-8 py-5 text-xl font-black text-white shadow-2xl transition hover:from-amber-600 hover:to-orange-600 hover:shadow-amber-900/50"
             >
-              💼 Quiero ser redistribuidor
+              💼 Quiero ser Socio Ganador
             </button>
 
             {/* Mensaje de éxito */}
@@ -675,7 +675,7 @@ export default function LandingDistribuidor() {
           <h3 className="mb-2 text-2xl font-black text-amber-700">
             Hojaldito®
           </h3>
-          <p className="mb-6 text-gray-700">Programa Redistribuidor Oficial • Tunja, Boyacá</p>
+          <p className="mb-6 text-gray-700">Programa Socio Ganador • Tunja, Boyacá</p>
           <p className="text-sm text-gray-600">
             © {new Date().getFullYear()} Hojaldito® • Oportunidades de ingreso en Boyacá
           </p>

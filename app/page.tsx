@@ -88,7 +88,7 @@ export default function HomePage() {
               </div>
             </button>
 
-            {/* TARJETA 2: Distribuidor */}
+            {/* TARJETA 2: Socio Ganador */}
             <button
               onClick={() => {
                 setSelectedOption("distribuidor");
@@ -99,11 +99,11 @@ export default function HomePage() {
               <div className="mb-6 text-center">
                 <div className="mb-4 text-6xl">💼</div>
                 <h2 className="mb-4 text-3xl font-black text-gray-900">
-                  Quiero ser redistribuidor
+                  Quiero ser Socio Ganador
                   <span className="block text-2xl">y ganar comisiones</span>
                 </h2>
                 <p className="text-lg text-gray-700">
-                  Recomiendo negocios y gano dinero cada semana sin invertir ni manejar producto.
+                  Recomiendo negocios y gano dinero cada semana directo en mi Nequi, Daviplata o donde yo quiera.
                 </p>
               </div>
 
