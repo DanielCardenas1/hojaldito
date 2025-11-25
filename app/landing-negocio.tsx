@@ -317,7 +317,7 @@ export default function LandingNegocio() {
             <div className="flex items-start gap-4 rounded-2xl bg-white/10 p-6 backdrop-blur-sm">
               <span className="text-3xl">🏆</span>
               <div>
-                <p className="font-bold">Sello oficial "Socio Pastelero Hojaldito®"</p>
+                <p className="font-bold">Sello oficial &ldquo;Socio Pastelero Hojaldito®&rdquo;</p>
                 <p className="text-sm text-amber-100">Para tu vitrina</p>
               </div>
             </div>
@@ -526,8 +526,8 @@ export default function LandingNegocio() {
                 </div>
               </div>
               <p className="mb-4 text-gray-700">
-                "Empezamos con 20 pasteles de prueba y terminamos pidiendo 60 semanales. 
-                Vendemos más café y la vitrina se ve mucho mejor."
+                &ldquo;Empezamos con 20 pasteles de prueba y terminamos pidiendo 60 semanales. 
+                Vendemos más café y la vitrina se ve mucho mejor.&rdquo;
               </p>
               <div className="text-amber-500">⭐⭐⭐⭐⭐</div>
             </div>
@@ -537,12 +537,12 @@ export default function LandingNegocio() {
               <div className="mb-4 flex items-center gap-3">
                 <div className="h-14 w-14 rounded-full bg-gradient-to-br from-amber-400 to-orange-500"></div>
                 <div>
-                  <p className="font-bold text-gray-900">Tienda Mary's</p>
+                  <p className="font-bold text-gray-900">Tienda Mary&apos;s</p>
                   <p className="text-sm text-gray-600">Cómbita</p>
                 </div>
               </div>
               <p className="mb-4 text-gray-700">
-                "El Día Pastelero nos llenó el negocio. Ahora la gente viene preguntando por los Hojaldtios."
+                &ldquo;El Día Pastelero nos llenó el negocio. Ahora la gente viene preguntando por los Hojaldtios.&rdquo;
               </p>
               <div className="text-amber-500">⭐⭐⭐⭐⭐</div>
             </div>
@@ -557,7 +557,7 @@ export default function LandingNegocio() {
                 </div>
               </div>
               <p className="mb-4 text-gray-700">
-                "Sin arriesgar nada probamos los pasteles. Ahora son nuestro producto estrella en las tardes."
+                &ldquo;Sin arriesgar nada probamos los pasteles. Ahora son nuestro producto estrella en las tardes.&rdquo;
               </p>
               <div className="text-amber-500">⭐⭐⭐⭐⭐</div>
             </div>

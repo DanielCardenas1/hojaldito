@@ -415,8 +415,8 @@ export default function LandingDistribuidor() {
                 </div>
               </div>
               <p className="mb-4 text-gray-700">
-                "Recomendé dos cafeterías que conocía y ahora recibo dinero cada semana sin hacer nada más. 
-                Solo los conecté con Hojaldito."
+                &ldquo;Recomendé dos cafeterías que conocía y ahora recibo dinero cada semana sin hacer nada más. 
+                Solo los conecté con Hojaldito.&rdquo;
               </p>
               <div className="text-amber-500">⭐⭐⭐⭐⭐</div>
             </div>
@@ -431,8 +431,8 @@ export default function LandingDistribuidor() {
                 </div>
               </div>
               <p className="mb-4 text-gray-700">
-                "Trabajo tiempo completo, pero como redistribuidora traje 3 negocios y ahora tengo un 
-                ingreso extra mensual sin cambiar mi rutina."
+                &ldquo;Trabajo tiempo completo, pero como redistribuidora traje 3 negocios y ahora tengo un 
+                ingreso extra mensual sin cambiar mi rutina.&rdquo;
               </p>
               <div className="text-amber-500">⭐⭐⭐⭐⭐</div>
             </div>
@@ -447,8 +447,8 @@ export default function LandingDistribuidor() {
                 </div>
               </div>
               <p className="mb-4 text-gray-700">
-                "Es perfecto para quien conoce gente en el sector. Yo conseguí 4 negocios en un mes 
-                y los ingresos son constantes."
+                &ldquo;Es perfecto para quien conoce gente en el sector. Yo conseguí 4 negocios en un mes 
+                y los ingresos son constantes.&rdquo;
               </p>
               <div className="text-amber-500">⭐⭐⭐⭐⭐</div>
             </div>
