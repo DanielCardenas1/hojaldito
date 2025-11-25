@@ -14,10 +14,25 @@ export default function LandingSocioGanador() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Crear mensaje para WhatsApp
+    const mensaje = `¡Hola! Quiero ser Socio Ganador de Hojaldito®:\n\n` +
+      `👤 Nombre: ${formData.nombre}\n` +
+      `🌆 Ciudad: ${formData.ciudad}\n` +
+      `📱 WhatsApp: ${formData.whatsapp}\n` +
+      `🏪 Negocios que puedo contactar: ${formData.negocios}` +
+      (formData.experiencia ? `\n📝 Experiencia: ${formData.experiencia}` : "");
+    
+    // Número de WhatsApp de Hojaldito (reemplazar con el número real)
+    const whatsappNumber = "573000000000";
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensaje)}`;
+    
+    // Abrir WhatsApp
+    window.open(url, "_blank");
+    
     // Mostrar mensaje de éxito
     setShowSuccess(true);
     
-    // Resetear formulario después de 5 segundos
+    // Resetear formulario después de 3 segundos
     setTimeout(() => {
       setFormData({
         nombre: "",
@@ -656,10 +671,10 @@ export default function LandingSocioGanador() {
             {showSuccess && (
               <div className="rounded-2xl bg-green-100 p-6 text-center">
                 <p className="text-lg font-bold text-green-800">
-                  ✅ ¡Gracias!
+                  ✅ ¡Perfecto!
                 </p>
                 <p className="mt-2 text-sm text-green-700">
-                  Revisaremos tu información y te contactaremos por WhatsApp para contarte cómo empezar.
+                  Se abrió WhatsApp para que puedas enviarnos tu información directamente. 📱
                 </p>
               </div>
             )}
