@@ -1,12 +1,12 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import LandingNegocio from "./landing-negocio";
 import LandingDistribuidor from "./redistribuidor";
 
 type SelectedOption = null | "negocio" | "socio";
 
-export default function HomePage() {
+function HomePageContent() {
   const [selectedOption, setSelectedOption] = useState<SelectedOption>(null);
   
   // Lee el parámetro ?view=socio | negocio y selecciona el funnel inicial
@@ -178,5 +178,20 @@ export default function HomePage() {
         </div>
       </footer>
     </main>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <Suspense fallback={
+      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-amber-500 to-orange-600">
+        <div className="text-center text-white">
+          <div className="mb-4 text-6xl">🥐</div>
+          <p className="text-xl font-bold">Cargando Hojaldito®...</p>
+        </div>
+      </div>
+    }>
+      <HomePageContent />
+    </Suspense>
   );
 }
