@@ -1,7 +1,11 @@
 "use client";
 import { useState } from "react";
 
-export default function LandingNegocio() {
+interface LandingNegocioProps {
+  onBack?: () => void;
+}
+
+export default function LandingNegocio({ onBack }: LandingNegocioProps = {}) {
   const [formData, setFormData] = useState({
     nombre: "",
     nombreNegocio: "",
@@ -57,6 +61,16 @@ export default function LandingNegocio() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-amber-50 via-neutral-50 to-amber-50">
+      {/* Botón flotante para volver */}
+      {onBack && (
+        <button
+          onClick={onBack}
+          className="fixed left-4 top-4 z-50 flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-gray-800 shadow-lg transition hover:bg-gray-100"
+        >
+          <span>←</span> Volver
+        </button>
+      )}
+
       {/* ========================================
           1. HERO - Sección principal
       ======================================== */}

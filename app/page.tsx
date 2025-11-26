@@ -1,12 +1,23 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import LandingNegocio from "./landing-negocio";
 import LandingDistribuidor from "./redistribuidor";
 
-type SelectedOption = null | "negocio" | "distribuidor";
+type SelectedOption = null | "negocio" | "socio";
 
 export default function HomePage() {
   const [selectedOption, setSelectedOption] = useState<SelectedOption>(null);
+  
+  // Lee el parámetro ?view=socio | negocio y selecciona el funnel inicial
+  const searchParams = useSearchParams();
+  const viewParam = searchParams.get("view");
+
+  useEffect(() => {
+    if (viewParam === "negocio" || viewParam === "socio") {
+      setSelectedOption(viewParam);
+    }
+  }, [viewParam]);
 
   const scrollToContent = () => {
     setTimeout(() => {
@@ -14,13 +25,13 @@ export default function HomePage() {
     }, 100);
   };
 
-  // Si ya seleccionó una opción, mostrar el componente correspondiente
+  // Si ya seleccionó una opción (manualmente o por URL), mostrar el componente correspondiente
   if (selectedOption === "negocio") {
-    return <LandingNegocio />;
+    return <LandingNegocio onBack={() => setSelectedOption(null)} />;
   }
 
-  if (selectedOption === "distribuidor") {
-    return <LandingDistribuidor />;
+  if (selectedOption === "socio") {
+    return <LandingDistribuidor onBack={() => setSelectedOption(null)} />;
   }
 
   // Selector inicial
@@ -91,7 +102,7 @@ export default function HomePage() {
             {/* TARJETA 2: Socio Ganador */}
             <button
               onClick={() => {
-                setSelectedOption("distribuidor");
+                setSelectedOption("socio");
                 scrollToContent();
               }}
               className="group relative overflow-hidden rounded-3xl border-4 border-white/20 bg-white p-8 text-left shadow-2xl transition-all hover:scale-105 hover:border-white hover:shadow-amber-900/50 md:p-10"
