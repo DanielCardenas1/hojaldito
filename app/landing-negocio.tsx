@@ -26,8 +26,8 @@ export default function LandingNegocio() {
       `📱 WhatsApp: ${formData.whatsapp}\n` +
       `👥 Visitantes al día: ${formData.visitantes}`;
     
-    // Número de WhatsApp de Hojaldito (reemplazar con el número real)
-    const whatsappNumber = "573000000000";
+    // Número de WhatsApp de Hojaldito
+    const whatsappNumber = "573508823968";
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensaje)}`;
     
     // Abrir WhatsApp

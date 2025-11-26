@@ -22,8 +22,8 @@ export default function LandingSocioGanador() {
       `🏪 Negocios que puedo contactar: ${formData.negocios}` +
       (formData.experiencia ? `\n📝 Experiencia: ${formData.experiencia}` : "");
     
-    // Número de WhatsApp de Hojaldito (reemplazar con el número real)
-    const whatsappNumber = "573000000000";
+    // Número de WhatsApp de Hojaldito
+    const whatsappNumber = "573508823968";
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensaje)}`;
     
     // Abrir WhatsApp
@@ -86,7 +86,7 @@ export default function LandingSocioGanador() {
           {/* Subtítulo */}
           <p className="mx-auto mb-10 max-w-3xl text-center text-xl text-amber-50 md:text-2xl">
             Conviértete en <strong className="text-white">Socio Ganador Hojaldito®</strong>: 
-            recomiendas negocios, consigues eventos (cumpleaños, corporativos...) y recibes comisión por cada venta. 
+            recomiendas negocios y recibes una bonificación por cada pastel que vendan. 
             <span className="block mt-2">Nosotros hacemos todo lo demás.</span>
           </p>
 
@@ -119,9 +119,9 @@ export default function LandingSocioGanador() {
           </h2>
           <p className="text-xl leading-relaxed text-gray-700 md:text-2xl">
             Como Socio Ganador <strong>no manejas producto, no haces domicilios, no cobras</strong>. 
-            Solo conectas cafeterías, tiendas o restaurantes con Hojaldito®, o consigues eventos externos. 
+            Solo conectas cafeterías, tiendas o restaurantes con Hojaldito®. 
             <span className="mt-2 block text-amber-700">
-              Cada venta que resulte de tu recomendación, <strong>tú ganas comisión</strong>.
+              Si el negocio compra y vende pasteles, <strong>tú ganas comisión</strong>.
             </span>
           </p>
         </div>
@@ -134,7 +134,7 @@ export default function LandingSocioGanador() {
         <div className="mx-auto max-w-5xl px-6">
           <h2 className="mb-12 text-center text-3xl font-black text-gray-900 md:text-5xl">
             Tu trabajo es simple:
-            <span className="block text-blue-600">acercarnos negocios y eventos</span>
+            <span className="block text-blue-600">acercarnos a los negocios correctos</span>
           </h2>
 
           <div className="space-y-4">
@@ -143,7 +143,7 @@ export default function LandingSocioGanador() {
                 1
               </span>
               <p className="text-lg text-gray-800">
-                <strong>Hablas con dueños</strong> de cafeterías, tiendas, panaderías o restaurantes, <strong>o consigues eventos</strong> (cumpleaños, empresas, fiestas...).
+                <strong>Hablas con dueños</strong> de cafeterías, tiendas, panaderías o restaurantes.
               </p>
             </div>
 
@@ -205,10 +205,10 @@ export default function LandingSocioGanador() {
                 Paso 1
               </div>
               <h3 className="mb-4 text-2xl font-bold text-gray-900">
-                Recomiendas un negocio o evento
+                Recomiendas un negocio
               </h3>
               <p className="text-gray-700">
-                Hablas con una cafetería, tienda o restaurante sobre el modelo. O consigues un evento (cumpleaños, corporativo, reunión...). Nos envías el contacto.
+                Hablas con una cafetería, tienda o restaurante, le cuentas del modelo y, si le interesa, nos envías su contacto.
               </p>
             </div>
 
@@ -237,10 +237,10 @@ export default function LandingSocioGanador() {
                 Paso 3
               </div>
               <h3 className="mb-4 text-2xl font-bold text-gray-900">
-                Ganas por cada venta
+                Ganas cada semana
               </h3>
               <p className="text-gray-700">
-                <strong>Negocios recurrentes:</strong> cada semana que compran y venden, tú ganas. <strong>Eventos:</strong> un pago por el evento que conseguiste. Todo <strong className="text-green-600">directo en tu Nequi, Daviplata o donde lo desees</strong>.
+                Cada vez que el negocio que referiste compra y vende pasteles, recibes tu bonificación semanal <strong className="text-green-600">directo en tu Nequi, Daviplata o donde lo desees</strong>. Ingreso constante sin volver a hacer nada con ese negocio.
               </p>
             </div>
           </div>
@@ -285,8 +285,8 @@ export default function LandingSocioGanador() {
             <div className="flex items-start gap-4 rounded-2xl bg-white p-6 shadow-md">
               <span className="text-3xl">💰</span>
               <div>
-                <p className="font-bold text-gray-900">Ganas con negocios y eventos</p>
-                <p className="text-sm text-gray-600">Comisión recurrente o por evento</p>
+                <p className="font-bold text-gray-900">Bonificación por venta</p>
+                <p className="text-sm text-gray-600">Por cada pastel vendido</p>
               </div>
             </div>
 
@@ -336,11 +336,11 @@ export default function LandingSocioGanador() {
             <p className="mb-6 text-xl leading-relaxed">
               Hojaldito está en <strong>fase de expansión</strong>. Por eso, durante los primeros meses 
               ofrecemos una <strong className="text-amber-100">bonificación más alta</strong> por los 
-              pasteles vendidos en los negocios que tú consigas <strong>y por cada evento que nos traigas</strong>.
+              pasteles vendidos en los negocios que tú consigas.
             </p>
             <p className="text-lg text-amber-100">
-              Después, la bonificación se estabiliza, y se mantiene para los Socios Ganadores que 
-              sigan trayendo nuevos clientes y eventos.
+              Después, la bonificación se estabiliza, y se mantiene para los redistribuidores que 
+              sigan trayendo nuevos clientes.
             </p>
           </div>
 
@@ -360,13 +360,6 @@ export default function LandingSocioGanador() {
                 <p className="text-lg">
                   <strong>3-4 negocios activos</strong> pueden convertirse en un ingreso mensual 
                   muy interesante, sin que tengas que estar encima todo el tiempo.
-                </p>
-              </div>
-
-              <div className="flex items-start gap-3 rounded-xl bg-blue-50 p-4">
-                <span className="text-2xl">🎉</span>
-                <p className="text-lg">
-                  <strong>Eventos puntuales</strong> (cumpleaños, corporativos...) también te dejan comisión inmediata.
                 </p>
               </div>
             </div>
@@ -546,23 +539,8 @@ export default function LandingSocioGanador() {
                 </div>
               </summary>
               <p className="mt-4 text-gray-700">
-                Conocer negocios (cafeterías, tiendas, restaurantes), explicarles el modelo y pasarnos su contacto. 
-                <strong>O conseguir eventos</strong> (cumpleaños, eventos corporativos, fiestas...). 
-                Hojaldito se encarga del resto.
-              </p>
-            </details>
-
-            <details className="group rounded-2xl border-2 border-gray-200 bg-white p-6 shadow-md">
-              <summary className="cursor-pointer list-none font-bold text-gray-900">
-                <div className="flex items-center justify-between">
-                  <span className="text-lg">¿También gano por eventos (cumpleaños, corporativos...)?</span>
-                  <span className="text-2xl transition-transform group-open:rotate-45">+</span>
-                </div>
-              </summary>
-              <p className="mt-4 text-gray-700">
-                <strong>Sí.</strong> Si consigues un evento externo (cumpleaños, evento corporativo, reunión familiar...) 
-                y Hojaldito vende para ese evento, <strong className="text-green-600">tú ganas tu comisión por esa venta</strong>. 
-                Funciona para negocios recurrentes y eventos puntuales.
+                Conocer negocios, explicarles el modelo y pasarnos su contacto. 
+                <strong> Hojaldito se encarga del resto.</strong>
               </p>
             </details>
 
