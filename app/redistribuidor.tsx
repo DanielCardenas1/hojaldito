@@ -42,7 +42,7 @@ export default function LandingSocioGanador() {
         experiencia: "",
       });
       setShowSuccess(false);
-    }, 5000);
+    }, 3000);
   };
 
   const scrollToForm = () => {
