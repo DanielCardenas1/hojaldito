@@ -1,197 +1,171 @@
 "use client";
-import { useState, useEffect, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
-import LandingNegocio from "./landing-negocio";
-import LandingDistribuidor from "./redistribuidor";
+import React from "react";
 
-type SelectedOption = null | "negocio" | "socio";
+const whatsappNumber = "573508823968"; // cambiar si hace falta
+const city = "Tunja, Boyacá"; // cambiar si hace falta
 
-function HomePageContent() {
-  const [selectedOption, setSelectedOption] = useState<SelectedOption>(null);
-  
-  // Lee el parámetro ?view=socio | negocio y selecciona el funnel inicial
-  const searchParams = useSearchParams();
-  const viewParam = searchParams.get("view");
-
-  useEffect(() => {
-    if (viewParam === "negocio" || viewParam === "socio") {
-      setSelectedOption(viewParam);
-    }
-  }, [viewParam]);
-
-  const scrollToContent = () => {
-    setTimeout(() => {
-      document.getElementById("content")?.scrollIntoView({ behavior: "smooth" });
-    }, 100);
-  };
-
-  // Si ya seleccionó una opción (manualmente o por URL), mostrar el componente correspondiente
-  if (selectedOption === "negocio") {
-    return <LandingNegocio onBack={() => setSelectedOption(null)} />;
-  }
-
-  if (selectedOption === "socio") {
-    return <LandingDistribuidor onBack={() => setSelectedOption(null)} />;
-  }
-
-  // Selector inicial
-  return (
-    <main className="min-h-screen bg-gradient-to-b from-amber-50 via-white to-amber-50">
-      {/* ========================================
-          SECCIÓN INICIAL - SELECTOR DE CAMINO
-      ======================================== */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-amber-600 via-amber-500 to-orange-600 py-20 md:py-32">
-        {/* Pattern decorativo */}
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          />
-        </div>
-
-        <div className="relative mx-auto max-w-6xl px-6">
-          {/* Logo/Badge */}
-          <div className="mb-8 flex justify-center">
-            <div className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 bg-white/10 px-6 py-3 backdrop-blur-sm">
-              <span className="text-2xl">🥐</span>
-              <span className="text-sm font-bold uppercase tracking-wider text-white">
-                Hojaldito®
-              </span>
-            </div>
-          </div>
-
-          {/* Título principal */}
-          <h1 className="mb-6 text-center text-4xl font-black leading-tight text-white md:text-6xl lg:text-7xl">
-            ¿Cómo quieres ganar con Hojaldito®?
-          </h1>
-
-          {/* Subtítulo */}
-          <p className="mx-auto mb-12 max-w-2xl text-center text-xl text-amber-50 md:text-2xl">
-            Elige tu camino y te mostramos solo la información que necesitas.
-          </p>
-
-          {/* Dos tarjetas de selección */}
-          <div className="grid gap-8 md:grid-cols-2">
-            {/* TARJETA 1: Negocio */}
-            <button
-              onClick={() => {
-                setSelectedOption("negocio");
-                scrollToContent();
-              }}
-              className="group relative overflow-hidden rounded-3xl border-4 border-white/20 bg-white p-8 text-left shadow-2xl transition-all hover:scale-105 hover:border-white hover:shadow-amber-900/50 md:p-10"
-            >
-              <div className="mb-6 text-center">
-                <div className="mb-4 text-6xl">🏪</div>
-                <h2 className="mb-4 text-3xl font-black text-gray-900">
-                  Quiero vender pasteles
-                  <span className="block text-2xl">en mi negocio</span>
-                </h2>
-                <p className="text-lg text-gray-700">
-                  Soy cafetería, tienda, restaurante o panadería y quiero ganar más vendiendo Hojalditos.
-                </p>
-              </div>
-
-              <div className="mt-6 flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 px-6 py-3 text-lg font-bold text-white transition group-hover:from-blue-600 group-hover:to-indigo-600">
-                Ver cómo funciona
-                <span className="transition-transform group-hover:translate-x-1">→</span>
-              </div>
-            </button>
-
-            {/* TARJETA 2: Socio Ganador */}
-            <button
-              onClick={() => {
-                setSelectedOption("socio");
-                scrollToContent();
-              }}
-              className="group relative overflow-hidden rounded-3xl border-4 border-white/20 bg-white p-8 text-left shadow-2xl transition-all hover:scale-105 hover:border-white hover:shadow-amber-900/50 md:p-10"
-            >
-              <div className="mb-6 text-center">
-                <div className="mb-4 text-6xl">💼</div>
-                <h2 className="mb-4 text-3xl font-black text-gray-900">
-                  Quiero ser Socio Ganador
-                  <span className="block text-2xl">y ganar comisiones</span>
-                </h2>
-                <p className="text-lg text-gray-700">
-                  Recomiendo negocios y gano dinero cada semana directo en mi Nequi, Daviplata o donde yo quiera.
-                </p>
-              </div>
-
-              <div className="mt-6 flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-6 py-3 text-lg font-bold text-white transition group-hover:from-amber-600 group-hover:to-orange-600">
-                Ver cómo funciona
-                <span className="transition-transform group-hover:translate-x-1">→</span>
-              </div>
-            </button>
-          </div>
-
-          {/* Texto de apoyo */}
-          <p className="mt-12 text-center text-sm text-amber-100">
-            📍 Tunja, Boyacá y municipios cercanos
-          </p>
-        </div>
-      </section>
-
-      {/* Sección de beneficios generales */}
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="mb-12 text-center text-3xl font-black text-gray-900 md:text-5xl">
-            ¿Por qué Hojaldito®?
-          </h2>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="rounded-2xl border-2 border-amber-200 bg-amber-50 p-8 text-center shadow-md">
-              <div className="mb-4 text-5xl">🥐</div>
-              <h3 className="mb-3 text-xl font-bold text-gray-900">Producto premium</h3>
-              <p className="text-gray-700">
-                Pasteles grandes, frescos y con sabores únicos que se venden solos.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border-2 border-amber-200 bg-amber-50 p-8 text-center shadow-md">
-              <div className="mb-4 text-5xl">🤝</div>
-              <h3 className="mb-3 text-xl font-bold text-gray-900">Sin riesgo</h3>
-              <p className="text-gray-700">
-                Modelo pensado para que todos ganen: negocios, redistribuidores y clientes.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border-2 border-amber-200 bg-amber-50 p-8 text-center shadow-md">
-              <div className="mb-4 text-5xl">📈</div>
-              <h3 className="mb-3 text-xl font-bold text-gray-900">Crecimiento real</h3>
-              <p className="text-gray-700">
-                Acompañamiento, estrategias y apoyo constante para que vendas más.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t-2 border-amber-200 bg-amber-50 py-12">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <h3 className="mb-2 text-2xl font-black text-amber-700">Hojaldito®</h3>
-          <p className="mb-6 text-gray-700">Tunja, Boyacá • Colombia</p>
-          <p className="text-sm text-gray-600">
-            © {new Date().getFullYear()} Hojaldito® • Todos los derechos reservados
-          </p>
-        </div>
-      </footer>
-    </main>
-  );
+function openWhatsApp(subject: string) {
+  const mensaje = `${subject}\n\nMe interesa probar Hojaldito. Ciudad: ${city}`;
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensaje)}`;
+  window.open(url, "_blank");
 }
 
 export default function HomePage() {
   return (
-    <Suspense fallback={
-      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-amber-500 to-orange-600">
-        <div className="text-center text-white">
-          <div className="mb-4 text-6xl">🥐</div>
-          <p className="text-xl font-bold">Cargando Hojaldito®...</p>
+    <main className="min-h-screen bg-white text-gray-900">
+      {/* 1. PORTADA */}
+      <section className="bg-amber-50 py-20">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/60 px-6 py-2">
+            <span className="text-3xl">🥐</span>
+            <h1 className="text-2xl font-extrabold tracking-tight">HOJALDITO</h1>
+          </div>
+
+          <h2 className="mb-4 text-4xl font-black">Hojaldre congelado premium para negocios</h2>
+          <p className="mb-6 text-lg">Aumenta tu ticket promedio sin aumentar tu riesgo.</p>
+
+          <div className="mb-6 flex items-center justify-center gap-4">
+            <button
+              onClick={() => openWhatsApp("Quiero probar Hojaldito - Pedido inicial")}
+              className="rounded-full bg-amber-600 px-6 py-3 font-bold text-white shadow-md"
+            >
+              Contacto (WhatsApp)
+            </button>
+            <div className="text-sm text-gray-600">{city}</div>
+          </div>
+
+          <div className="mx-auto max-w-xl">
+            <div className="h-56 overflow-hidden rounded-2xl bg-gray-100">
+              {/* Imagen real del pastel congelado: reemplazar src cuando tengas la foto */}
+              <img
+                src="/hojaldito-pastel-placeholder.jpg"
+                alt="Pastel congelado Hojaldito"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
         </div>
-      </div>
-    }>
-      <HomePageContent />
-    </Suspense>
+      </section>
+
+      {/* 2. PROBLEMA */}
+      <section className="border-t py-12">
+        <div className="mx-auto max-w-4xl px-6">
+          <h3 className="mb-4 text-2xl font-bold">El problema que resolvemos</h3>
+          <p className="mb-4">Muchos negocios pierden dinero porque:</p>
+          <ul className="mb-4 list-inside list-disc space-y-1 pl-4 text-gray-700">
+            <li>Compran producto terminado y se vence</li>
+            <li>Tienen merma diaria</li>
+            <li>No controlan producción</li>
+            <li>Trabajan con márgenes bajos</li>
+          </ul>
+          <p className="text-gray-800 font-semibold">El resultado: rotación lenta y baja rentabilidad.</p>
+        </div>
+      </section>
+
+      {/* 3. SOLUCIÓN */}
+      <section className="bg-green-50 py-12">
+        <div className="mx-auto max-w-4xl px-6">
+          <h3 className="mb-4 text-2xl font-bold">La solución</h3>
+          <p className="mb-4">HOJALDITO ofrece hojaldre congelado listo para hornear.</p>
+          <ul className="mb-4 list-inside list-disc space-y-1 pl-4 text-gray-700">
+            <li>Hornear solo lo que se vende</li>
+            <li>Reducir desperdicio</li>
+            <li>Controlar inventario</li>
+            <li>Mantener producto fresco todo el día</li>
+          </ul>
+          <p className="text-gray-800 font-semibold">Más control = Más utilidad.</p>
+        </div>
+      </section>
+
+      {/* 4. PRODUCTO */}
+      <section className="py-12">
+        <div className="mx-auto max-w-4xl px-6">
+          <h3 className="mb-4 text-2xl font-bold">El producto</h3>
+          <p className="mb-3">Media luna compacta (130–145g). Formato congelado listo para horno.</p>
+          <ul className="mb-4 list-inside list-disc space-y-1 pl-4 text-gray-700">
+            <li>Mantiene estructura</li>
+            <li>Dorado uniforme</li>
+            <li>Sellado firme</li>
+          </ul>
+          <p className="text-gray-800 font-semibold">Diseñado para venta superior a $5.000 por unidad.</p>
+        </div>
+      </section>
+
+      {/* 5. SABORES */}
+      <section className="bg-amber-50 py-12">
+        <div className="mx-auto max-w-4xl px-6">
+          <h3 className="mb-4 text-2xl font-bold">Sabores premium</h3>
+          <ul className="grid gap-2 md:grid-cols-2">
+            <li>• Costilla BBQ</li>
+            <li>• Pollo champiñón y tocineta</li>
+            <li>• Mazorcada</li>
+            <li>• Chorizo jalapeño con queso</li>
+          </ul>
+          <p className="mt-4 text-gray-800 font-semibold">Sabores diseñados para alto ticket y buena rotación.</p>
+        </div>
+      </section>
+
+      {/* 6. RENTABILIDAD */}
+      <section className="py-12">
+        <div className="mx-auto max-w-4xl px-6">
+          <h3 className="mb-4 text-2xl font-bold">Rentabilidad estimada</h3>
+          <p className="mb-4">Ejemplo simple:</p>
+          <div className="mb-4 rounded-lg border p-6">
+            <p className="mb-2">Venta sugerida: <strong>$6.000</strong></p>
+            <p className="mb-2">Paquete mayorista: <strong>30 unidades</strong></p>
+            <p className="font-bold">Ingreso bruto potencial: <strong>$180.000</strong></p>
+          </div>
+          <p className="text-gray-800 font-semibold">No competimos por precio. Competimos por margen.</p>
+        </div>
+      </section>
+
+      {/* 7. MODELO DE TRABAJO */}
+      <section className="bg-neutral-50 py-12">
+        <div className="mx-auto max-w-4xl px-6">
+          <h3 className="mb-4 text-2xl font-bold">Modelo de trabajo</h3>
+          <ul className="mb-4 list-inside list-disc space-y-1 pl-4 text-gray-700">
+            <li>Pedido mínimo mayorista</li>
+            <li>Producción por lote</li>
+            <li>Entrega programada</li>
+            <li>Relación directa con el fabricante</li>
+          </ul>
+          <p className="text-gray-800 font-semibold">No venta informal al público.</p>
+        </div>
+      </section>
+
+      {/* 8. PARA QUIÉN */}
+      <section className="py-12">
+        <div className="mx-auto max-w-4xl px-6">
+          <h3 className="mb-4 text-2xl font-bold">¿Para quién es ideal?</h3>
+          <ul className="mb-4 grid gap-2 md:grid-cols-2">
+            <li>✔ Cafés</li>
+            <li>✔ Restaurantes</li>
+            <li>✔ Panaderías</li>
+            <li>✔ Hoteles</li>
+          </ul>
+          <p className="text-gray-800 font-semibold">Negocios que venden productos sobre $5.000.</p>
+        </div>
+      </section>
+
+      {/* 9. CONTACTO */}
+      <section className="bg-amber-600 py-16 text-white">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h3 className="mb-4 text-2xl font-bold">Contacto</h3>
+          <p className="mb-6">¿Quieres probar el producto y evaluar su rotación? Escríbenos y agenda tu pedido inicial.</p>
+
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <button
+              onClick={() => openWhatsApp("Quiero probar Hojaldito - Solicitar prueba")}
+              className="rounded-full bg-white px-6 py-3 font-bold text-amber-600 shadow-md"
+            >
+              WhatsApp
+            </button>
+            <div className="text-sm">Ciudad: {city}</div>
+          </div>
+
+          <p className="mt-6 text-sm opacity-90">Número: +57 350 882 3968</p>
+        </div>
+      </section>
+    </main>
   );
 }
