@@ -167,5 +167,6 @@ export default function HomePage() {
           <p className="mt-4 text-sm text-gray-600">Número: +57 350 882 3968</p>
         </section>
       </div>
+    </main>
   );
 }
