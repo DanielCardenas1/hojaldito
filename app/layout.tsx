@@ -1,19 +1,23 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "../components/Header";
 
 export const metadata: Metadata = {
-  title: "Punto Pastelero - Visibilidad para negocios de comida",
-  description: "Sistema de visibilidad compartida para cafeterías, pastelerías y restaurantes. Aumenta tu flujo de clientes sin pagar publicidad.",
+  title: "Hojaldito - Hojaldre congelado premium",
+  description: "Hojaldito: hojaldre congelado premium listo para hornear. Aumenta ticket promedio sin riesgo.",
+  openGraph: {
+    title: "Hojaldito - Hojaldre congelado premium",
+    description: "Hojaldito: hojaldre congelado premium listo para hornear.",
+  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
