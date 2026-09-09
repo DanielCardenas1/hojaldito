@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useExperience } from "@/lib/experience/context";
 import { trackEvent } from "@/lib/experience/track";
@@ -16,21 +16,28 @@ import ResumeScreen from "./ResumeScreen";
 // Motor genérico: recorre la tabla de pasos de una ruta (ver lib/routes/*.ts). Cada
 // pantalla es consecuencia de la ruta, no al revés (documento 2, regla 1).
 export default function RouteRunner({ route }: { route: RouteDefinition }) {
-  const { state, dispatch } = useExperience();
+  const { state, dispatch, isHydrated } = useExperience();
   const router = useRouter();
   const progress = state.routes[route.id];
   const stepId = progress?.stepId ?? route.entryStep;
   const step = route.steps[stepId];
   const canGoBack = (progress?.backStack.length ?? 0) > 0;
 
-  // Si ya había avance guardado antes de este montaje, se lo decimos explícitamente en
-  // vez de retomar en silencio (patrón "resume" de la experiencia v3 analizada).
-  // `hasPriorProgress` se recalcula en cada render (no se fija con un valor inicial de
-  // useState) porque el estado persistido se carga de forma asíncrona desde localStorage
-  // (ver ExperienceProvider): en el primer render, antes de esa hidratación, `progress`
-  // todavía no existe. `resumeAcknowledged` sí es una decisión que debe "pegarse" una vez
-  // el usuario la toma, así que ese es el único valor que vive en useState.
-  const hasPriorProgress = !!progress && (progress.backStack.length > 0 || progress.completed);
+  // Si ya había avance guardado ANTES de este montaje (una sesión anterior, no un paso que
+  // el propio usuario acaba de dar ahora), se lo decimos explícitamente en vez de retomar
+  // en silencio (patrón "resume" de la experiencia v3 analizada).
+  //
+  // El estado persistido se carga de forma asíncrona desde localStorage (ver
+  // ExperienceProvider), así que no basta con mirar `progress` en cada render: si lo
+  // hiciéramos, cualquier avance normal dentro de esta misma visita (que también hace
+  // crecer `backStack`) dispararía la pantalla de "retomar" por error. Por eso la
+  // detección se congela una sola vez, justo cuando `isHydrated` pasa a true por primera
+  // vez — antes de que el usuario haya podido dar un solo paso en este montaje.
+  const hasPriorProgressRef = useRef<boolean | null>(null);
+  if (isHydrated && hasPriorProgressRef.current === null) {
+    hasPriorProgressRef.current = !!progress && (progress.backStack.length > 0 || progress.completed);
+  }
+  const hasPriorProgress = hasPriorProgressRef.current ?? false;
   const [resumeAcknowledged, setResumeAcknowledged] = useState(false);
   const showResume = hasPriorProgress && !resumeAcknowledged;
 

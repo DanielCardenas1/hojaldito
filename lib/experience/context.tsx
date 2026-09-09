@@ -12,6 +12,10 @@ const STORAGE_KEY = "hojaldito_experience_v1";
 interface ExperienceContextValue {
   state: ExperienceState;
   dispatch: Dispatch<ExperienceAction>;
+  // Expuesto para que consumidores (p. ej. RouteRunner) puedan distinguir "todavía no sé
+  // qué había guardado" de "ya revisé y no había nada" — necesario para decisiones que
+  // solo deben tomarse una vez, con el dato ya hidratado (ver detección de "retomar").
+  isHydrated: boolean;
 }
 
 const ExperienceContext = createContext<ExperienceContextValue | null>(null);
@@ -50,7 +54,7 @@ export function ExperienceProvider({ children }: { children: ReactNode }) {
   }, [state, isHydrated]);
 
   return (
-    <ExperienceContext.Provider value={{ state, dispatch }}>
+    <ExperienceContext.Provider value={{ state, dispatch, isHydrated }}>
       {children}
     </ExperienceContext.Provider>
   );
