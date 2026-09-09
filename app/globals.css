@@ -1,35 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:wght@600;700;900&display=swap');
 
-:root{
-	--color-bg: #0b0b0b;
-	--color-accent: #d4a321;
-	--color-muted: #6b6b6b;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html,body{
-	height:100%;
+html,
+body {
+  height: 100%;
 }
 
-body{
-	font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-	background-color: #fafafa;
-	color: #111827;
+html {
+  scroll-behavior: smooth;
 }
 
-.title-serif{
-	font-family: 'Playfair Display', Georgia, serif;
+body {
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background-color: #fffdf9;
+  color: #211b17;
 }
 
-.btn-accent{
-	background: var(--color-accent);
-	color: #fff;
-}
-
-.btn-outline-accent{
-	border: 2px solid var(--color-accent);
-	color: var(--color-accent);
+.title-serif {
+  font-family: 'Playfair Display', Georgia, serif;
 }
