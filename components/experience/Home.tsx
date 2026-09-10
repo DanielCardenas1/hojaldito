@@ -286,12 +286,12 @@ export default function Home() {
       </section>
 
       {/* ============ 10. SELECTOR DE INTENCIÓN ============ */}
-      <section id="elegir" className="bg-ink py-16 md:py-24">
+      <section id="elegir" className="bg-action py-16 md:py-24">
         <div className="mx-auto max-w-5xl px-6">
           <h2 className="title-serif mb-4 text-center text-4xl font-bold leading-tight text-paper md:text-5xl">
             ¿Qué necesitas hoy?
           </h2>
-          <p className="mx-auto mb-10 max-w-2xl text-center text-lg text-cream/80 md:text-xl">
+          <p className="mx-auto mb-10 max-w-2xl text-center text-lg text-paper/85 md:text-xl">
             No tienes que saber cuál Hojaldito elegir. Te ayudamos a encontrarlo.
           </p>
 
@@ -305,7 +305,7 @@ export default function Home() {
                 <div className="mb-3 text-5xl">{opt.icon}</div>
                 <h3 className="title-serif mb-2 text-xl font-bold text-ink md:text-2xl">{opt.label}</h3>
                 <p className="text-sm text-muted md:text-base">{opt.hint}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-accent">
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-action">
                   Ver cómo funciona <span className="transition group-hover:translate-x-1">→</span>
                 </span>
               </button>
@@ -313,7 +313,7 @@ export default function Home() {
           </div>
 
           <div className="mt-8 flex justify-center">
-            <a href="#descubrir" className="text-sm font-semibold text-cream/80 hover:text-paper">
+            <a href="#descubrir" className="text-sm font-semibold text-paper/85 hover:text-paper">
               No sé, quiero conocer más
             </a>
           </div>
