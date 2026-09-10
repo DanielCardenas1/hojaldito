@@ -20,7 +20,7 @@ export default function ResumeScreen({ routeLabel, onContinue, onRestart }: Prop
       <div className="flex flex-col gap-3">
         <button
           onClick={onContinue}
-          className="rounded-[13px] bg-ink px-6 py-4 text-left font-bold text-paper transition hover:-translate-y-0.5"
+          className="rounded-[13px] bg-action px-6 py-4 text-left font-bold text-paper shadow-sm transition hover:-translate-y-0.5 hover:bg-action-dark"
         >
           Continuar mi recorrido →
         </button>

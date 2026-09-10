@@ -44,7 +44,7 @@ export default function WhatsAppCTA({ step, ctx, routeLabel, onBack, onRestart }
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => trackEvent("whatsapp_handoff", { title: step.title })}
-        className="w-fit rounded-[13px] bg-ink px-8 py-4 text-lg font-bold text-paper shadow-sm transition hover:-translate-y-0.5"
+        className="w-fit rounded-[13px] bg-action px-8 py-4 text-lg font-bold text-paper shadow-md transition hover:-translate-y-0.5 hover:bg-action-dark"
       >
         Continuar por WhatsApp →
       </a>

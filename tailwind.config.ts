@@ -15,6 +15,11 @@ const config: Config = {
         paper: "#fffdf9",
         line: "#e6d9cb",
         accent: "#9b6745",
+        // Color de apetito/urgencia (psicología del color en marcas de comida), reservado
+        // solo para el botón de acción final de cada paso — no para fondos ni tarjetas,
+        // para no perder el posicionamiento premium de la paleta tierra.
+        action: "#d2560f",
+        "action-dark": "#b3480c",
       },
     },
   },

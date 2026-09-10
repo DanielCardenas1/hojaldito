@@ -30,9 +30,10 @@ export default function Header() {
             href={buildWhatsAppUrl(state, "Hola, tengo una pregunta antes de continuar.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-[13px] bg-ink px-4 py-2 text-sm font-bold text-paper shadow-sm transition hover:-translate-y-0.5"
+            className="whitespace-nowrap rounded-[13px] bg-ink px-3 py-2 text-sm font-bold text-paper shadow-sm transition hover:-translate-y-0.5 md:px-4"
           >
-            Hablar con alguien
+            <span className="md:hidden">💬 Escríbenos</span>
+            <span className="hidden md:inline">Hablar con alguien</span>
           </a>
         </nav>
       </div>

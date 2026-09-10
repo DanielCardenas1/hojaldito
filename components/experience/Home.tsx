@@ -130,7 +130,7 @@ export default function Home() {
             </a>
             <a
               href="#elegir"
-              className="rounded-[13px] bg-ink px-8 py-4 text-lg font-bold text-paper shadow-md transition hover:-translate-y-0.5"
+              className="rounded-[13px] bg-action px-8 py-4 text-lg font-bold text-paper shadow-md transition hover:-translate-y-0.5 hover:bg-action-dark"
             >
               ⚡ Ya sé qué quiero
             </a>
@@ -225,7 +225,7 @@ export default function Home() {
           <div className="mt-10 text-center">
             <button
               onClick={() => choose("vender")}
-              className="rounded-[13px] bg-ink px-8 py-4 text-lg font-bold text-paper shadow-md transition hover:-translate-y-0.5"
+              className="rounded-[13px] bg-action px-8 py-4 text-lg font-bold text-paper shadow-md transition hover:-translate-y-0.5 hover:bg-action-dark"
             >
               Quiero vender Hojaldito en mi negocio →
             </button>
@@ -248,7 +248,7 @@ export default function Home() {
           </p>
           <button
             onClick={() => choose("socio")}
-            className="rounded-[13px] bg-ink px-8 py-4 text-lg font-bold text-paper shadow-md transition hover:-translate-y-0.5"
+            className="rounded-[13px] bg-action px-8 py-4 text-lg font-bold text-paper shadow-md transition hover:-translate-y-0.5 hover:bg-action-dark"
           >
             Quiero ser Socio Ganador →
           </button>
@@ -262,7 +262,7 @@ export default function Home() {
           <p className="mb-6 text-muted">También puedes pedir Hojaldito para ti o para compartir.</p>
           <button
             onClick={() => choose("comprar")}
-            className="rounded-[13px] border border-ink px-6 py-3 font-bold text-ink transition hover:-translate-y-0.5"
+            className="rounded-[13px] bg-action px-6 py-3 font-bold text-paper shadow-sm transition hover:-translate-y-0.5 hover:bg-action-dark"
           >
             Quiero comprar Hojaldito →
           </button>
