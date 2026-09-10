@@ -1,6 +1,8 @@
 import type { ExperienceState } from "./types";
 
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || "573508823968";
+// Número de ejemplo (prototipo): reemplazar por el número real de Hojaldito antes de
+// lanzar a producción, vía la variable de entorno NEXT_PUBLIC_WHATSAPP.
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || "573000000000";
 
 const ROLE_LABELS: Record<ExperienceState["role"], string> = {
   cliente: "Cliente",
